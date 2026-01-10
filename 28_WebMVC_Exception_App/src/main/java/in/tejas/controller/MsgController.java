@@ -22,8 +22,8 @@ public class MsgController {
 	}
 	
 	
-	  @ExceptionHandler(value = ArithmeticException.class)//if we want to handle  all exceptionn we will write exception.class insted of Arithmatic public
-	  String handleAe(Exception e) { return "exView"; }
+//	  @ExceptionHandler(value = ArithmeticException.class)//if we want to handle  all exception we will write exception.class instead of Arithmatic public
+//	  String handleAe(Exception e) { return "exView"; }
 	 
 	//above method used to handle exception in same class that is controller based handling	
 }

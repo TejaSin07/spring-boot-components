@@ -13,7 +13,7 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public boolean save() {
 		
-		String sql = "insert into book values(1, 'Java', 1000)";
+		String sql = "insert into book values(37, 'pythob', 767000)";
 		
 		jdbcTemplate.execute(sql);
 		

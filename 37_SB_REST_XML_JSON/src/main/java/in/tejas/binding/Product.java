@@ -7,11 +7,11 @@ public class Product {
 	private Double price;
 
 	public Product() {
-		// TODO Auto-generated constructor stub
+		// it is not required here but every time no arg constructor require or not ?
+		
 	}
 
 	public Product(Integer id, String name, Double price) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;

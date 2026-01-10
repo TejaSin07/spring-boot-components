@@ -14,9 +14,9 @@ public class AppExceptionHandler {
 	}
 	
 
-	@ExceptionHandler(value = Exception.class) //for predefine exception
-	public String handleAe(Exception e) {
-		// logic
-		return "exView";
-	}
+//	@ExceptionHandler(value = Exception.class) //for predefine exception
+//	public String handleAe(Exception e) {
+//		// logic
+//		return "exView";
+//	}
 }

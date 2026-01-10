@@ -12,6 +12,8 @@ import com.tejas.entity.Emp;
 import com.tejas.repo.AddrRepo;
 import com.tejas.repo.EmpRepo;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmpService {
 
@@ -35,7 +37,7 @@ public class EmpService {
 			System.out.println("Address with ID 1 not found!");
 		} // child + parent
 	}
-
+//	@Transactional
 	public void getEmp() {
 		Optional<Emp> findById = empRepo.findById(1); // Fetch only parent
 		if (findById.isPresent()) {

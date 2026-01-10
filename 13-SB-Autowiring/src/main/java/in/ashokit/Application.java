@@ -14,6 +14,7 @@ public class Application {
 
 		Robot robot1 = context.getBean(Robot.class);
 		System.out.println(robot1.hashCode());
+		robot1.doWork();
 
 		Robot robot2 = context.getBean(Robot.class);
 		System.out.println(robot2.hashCode());

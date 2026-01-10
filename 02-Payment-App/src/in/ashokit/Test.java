@@ -7,7 +7,7 @@ public class Test {
 		RestaurantService service = 
 				new RestaurantService(new DebitCardPayment()); // ci
 		
-		//service.payment = new DebitCardPayment(); // FI
+         //service.payment = new DebitCardPayment(); // FI
 		
 		//service.setPayment(new CreditCardPayment()); // SI
 		

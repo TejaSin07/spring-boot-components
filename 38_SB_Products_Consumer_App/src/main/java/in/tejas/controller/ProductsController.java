@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.tejas.response.Product;
@@ -35,7 +36,7 @@ import in.tejas.service.ProductsService;
 @Controller
 public class ProductsController {
 
-	@Autowired
+	@Autowired//
 	private ProductsService service;
 	
 	@GetMapping("/product")
@@ -47,11 +48,18 @@ public class ProductsController {
 		
 		return "index";
 	}
-
+	
+	
+	
 	@GetMapping("/")
 	public String index(@ModelAttribute("p") Product p, Model model) {
 		return "index";
 	}
+	 @GetMapping("/api/product")
+	 @ResponseBody
+	 public Product getProduct(@RequestParam("pid") String pid) {
+        return service.getProduct(pid);
+	 }
 }
 
 

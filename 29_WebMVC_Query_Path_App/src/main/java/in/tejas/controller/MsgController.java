@@ -1,4 +1,4 @@
-  package in.tejas.controller;
+package in.tejas.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ public class MsgController {
 	public String welcomeMethod(@RequestParam("name") String name) {
 		return name + ", Welcome to Ashok IT";
 	}
-		//to access the above method, use the URL: http://localhost:8080/welcome?name=tejas
+	//to access the above method, use the URL: http://localhost:8080/welcome?name=tejas
 	//to access the below method, use the URL: http://localhost:8080/greet/tejas
 	@GetMapping("/greet/{name}")
 	public String greetMethod(@PathVariable("name") String name, Model model) {

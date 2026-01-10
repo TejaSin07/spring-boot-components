@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,18 +21,13 @@ public class Emp {
 
 	private String ename;
 
-	@Override
-	public String toString() {
-		return "Emp [eid=" + eid + ", ename=" + ename + ", esal=" + esal + "]";
-	}
-
 	private Double esal;
+	
+	
 
-	@OneToMany(
-			mappedBy = "emp", 
-			cascade = CascadeType.ALL
-	)
+	@OneToMany(mappedBy = "emp", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Address> addrList;
+
 
 	public Integer getEid() {
 		return eid;

@@ -22,12 +22,12 @@ public class PersonService {
 	
 	public void getPassport() {
 		Optional<Passport> byId = passportRepo.findById(1);
-		System.out.println(byId);
+		System.out.println(byId.get());
 	}
 
 	public void getPerson() {
 		Optional<Person> byId = personRepo.findById(1);
-		System.out.println(byId);
+		System.out.println(byId.get());
 	}
 
 	public void savePerson() {
@@ -48,7 +48,7 @@ public class PersonService {
 		pp.setPerson(p);
 
 		// saving person record (parent)
-		personRepo.save(p);
+		personRepo.save(p);// we are using cascade inside thats why along with saving person passport will also save
 
 		System.out.println("Record inserted...");
 

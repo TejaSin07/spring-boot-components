@@ -12,15 +12,15 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public UserService() {
-		System.out.println("0 param constructor");
-	}
-
-	//constructor
-	@Autowired
-	public UserService(UserDao userDao) {
-		this.userDao = userDao;
-	}
+//	public UserService() {
+//		System.out.println("0 param constructor");
+//	}
+//
+//	//constructor
+//	@Autowired
+//	public UserService(UserDao userDao) {
+//		this.userDao = userDao;
+//	}
 
 	//setter
 	@Autowired
@@ -28,9 +28,10 @@ public class UserService {
 		this.userDao = var;
 	}
 
-	public void getName(int id) {
+	public  String getName(int id) {
 		String findName = userDao.findName(id);
-		System.out.println("Name ::" + findName);
+//		System.out.println("Name ::" + findName);
+		return findName;
 	}
 
 }

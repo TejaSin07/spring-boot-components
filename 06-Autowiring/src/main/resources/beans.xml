@@ -3,13 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="printer" class="in.ashokit.SonyPrinter"  />
+	
 
-	<bean id="hp" class="in.ashokit.HPPrinter" primary="true"/>
+	<bean id="hp" class="in.ashokit.HPPrinter" />
+	
+	<bean id="son" class="in.ashokit.SonyPrinter" primary = "true" />
+	
+<!-- 		<bean id="son" class="in.ashokit.SonyPrinter" primary = "true" /> -->
 
-	<!-- <bean id="atm" class="in.ashokit.ATM" autowire="byName"> -->
+<!-- 	<bean id="atm" class="in.ashokit.ATM" autowire="byName"> -->
 
-	<!-- <bean id="atm" class="in.ashokit.ATM" autowire="byType"> -->
+<!-- 	<bean id="atm" class="in.ashokit.ATM" autowire="byName" > -->
 
 	<bean id="atm" class="in.ashokit.ATM" autowire="constructor">
 

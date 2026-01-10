@@ -13,8 +13,8 @@ public class ATM {
 		this.printer = printer;
 	}
 	
-	 public void setPrinter(IPrinter printer) {
-	        System.out.println("ATM:: setPrinter() method called");
+	 public void sethp(IPrinter printer) {
+	        System.out.println("ATM:: settter() method called");
 	        this.printer = printer;
 	    }
 	

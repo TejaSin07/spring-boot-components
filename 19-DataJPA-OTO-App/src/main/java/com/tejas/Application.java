@@ -14,11 +14,12 @@ public class Application {
 		PersonService bean = context.getBean(PersonService.class);
 		bean.savePerson();
 		bean.getPerson();
-		//bean.getPassport();  
+		bean.getPassport();  
 		
 	}
 
-}//get person --lazy-- 2 select query
+}
+//get person --lazy-- 2 select query
 // ---/------ ---eager--1 select query left join
 // get passposrt --- lazy --- 1 left   select query 
 // get passport  -----eager --- 1 left 

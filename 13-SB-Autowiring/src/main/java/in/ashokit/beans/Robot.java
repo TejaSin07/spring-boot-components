@@ -1,19 +1,25 @@
 package in.ashokit.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Robot {
-
-	private IChip chip;
 	
-	public Robot() {
-		// TODO Auto-generated constructor stub
-	}
+	//focus on final 
+	private final IChip chip;
+	
+//	public Robot() {
+//		// TODO Auto-generated constructor stub
+//	}
 	
 	public Robot(IChip chip) {
 		this.chip = chip;
 	}
+	
+//	public void setRobo(IChip chip) {
+//		this.chip = chip;
+//	}
 
 	public void doWork() {
 

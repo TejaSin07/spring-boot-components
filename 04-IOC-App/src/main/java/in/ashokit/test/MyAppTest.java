@@ -2,6 +2,7 @@ package in.ashokit.test;
 
 import java.security.Provider.Service;
 
+
 import org.springframework.context.ApplicationContext;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +16,7 @@ public class MyAppTest {
 
 		ApplicationContext ctxt = new ClassPathXmlApplicationContext("beans.xml");
 		UserService service = ctxt.getBean(UserService.class);
-		service.getName(1001);
+		System.out.println( service.getName(100));
 	}
 
 }

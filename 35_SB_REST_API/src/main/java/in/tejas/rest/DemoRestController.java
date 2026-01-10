@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoRestController {
 
 	@GetMapping(value = "/msg", produces = "text/plain")  //if we change text to json here ,then also we got text as we are not 
-	//														returning any object ,we are returning only text here
+														//  returning any object ,we are returning only text here
 	public ResponseEntity<String> getMsg() {
 		String msg = "Welcome to Ashok IT";
 		return new ResponseEntity<>(msg, HttpStatus.OK);

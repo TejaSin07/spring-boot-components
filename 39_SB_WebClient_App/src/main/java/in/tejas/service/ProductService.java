@@ -12,7 +12,7 @@ public class ProductService {
 	
 	public Mono<Product> getProductNew(){
 		
-		String apiUrl = "https://api.restful-api.dev/objects/1";
+		String apiUrl = "https://api.restful-api.dev/objects/2";
 		
 		WebClient webclient = WebClient.create();
 		
@@ -25,13 +25,9 @@ public class ProductService {
 //	What it does:
 //
 //		It gets the raw JSON response from the API as a plain string.
-//
 //		No mapping is done to any Java object.
-//
 //		Use case:
-//
 //		When you want to log, debug, or process the response manually.
-//
 //		Suitable when you don't have or need a specific Java class to map to.
 
 	public Mono<String> getProduct() {
@@ -45,7 +41,8 @@ public class ProductService {
         Mono<String> bodyToMono = webClient.get() // send GET req
 										   .uri(apiUrl) // provider url
 										   .retrieve() // get response body
-										   .bodyToMono(String.class); // map response       //in controlller return type should be Momo<String>
+										   .bodyToMono(String.class); // map response       
+        									//in controlller return type should be Momo<String>
 		
 		return bodyToMono;
 	}

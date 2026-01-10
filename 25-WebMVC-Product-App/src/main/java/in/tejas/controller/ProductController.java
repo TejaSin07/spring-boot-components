@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import in.tejas.entity.Product;
@@ -18,21 +19,25 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-	// load form - GET
-	@GetMapping("/")
-	public ModelAndView loadForm() {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("pobj", new Product());// for form binding
-		mav.setViewName("index");
-		return mav;
-	}
-	// @GetMapping("/a")  
-	// public String login(Model model) {
-	// 	model.addAttribute("probj",new Product());
-	// 	return "prodview";
-	// }
-	// this code also works same as above code
-	// save product - POST
+// load form - GET
+//	@GetMapping("/")
+//	public ModelAndView loadForm() {
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("pobj", new Product());// for form binding
+//		mav.setViewName("index");
+//		return mav;
+//	}
+	
+	 @GetMapping("/a")  
+	 @ResponseBody   //try by un-commenting this 
+	 public String login(Model model) {
+	 	model.addAttribute("pobj",new Product());
+	 	return "index";
+	 }
+//	 this code also works same as above code
+//	 save product - POST
+	 
+	 
 	@PostMapping("/product")
 	public ModelAndView saveProduct(Product pobj) {
 		ModelAndView mav = new ModelAndView();

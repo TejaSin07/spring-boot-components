@@ -22,10 +22,11 @@ public class Passport {
 	private LocalDate issuedDate;
 	private LocalDate expDate;
 
-	@OneToOne()
+	@OneToOne
 	@JoinColumn(name = "person_id")  //<---join column meaning 
-	//it is adding extra column to paassport 
+	//it is adding extra column to passport having name person_id
 	private Person person;
+
 
 	public Integer getPassportId() {
 		return passportId;
@@ -65,6 +66,12 @@ public class Passport {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+	@Override
+	public String toString() {
+	    return "Passport [passportId=" + passportId +
+	           ", passportNum=" + passportNum + 
+	           "person=" + person + "]";
 	}
 
 }

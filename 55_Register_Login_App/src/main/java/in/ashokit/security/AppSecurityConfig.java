@@ -22,11 +22,13 @@ public class AppSecurityConfig {
 	@Autowired
 	private CustomerService customerService;
 
+	//password encoder
 	@Bean
 	public PasswordEncoder pwdEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-
+	
+	// AuthenticationProvider
 	@Bean
 	public AuthenticationProvider authProvider() {
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -35,11 +37,14 @@ public class AppSecurityConfig {
 		return authProvider;
 	}
 
+	//Authentication manager
 	@Bean
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
 		return config.getAuthenticationManager();
 	}
-
+	
+	
+     //securityFFilterChain 
 	@Bean
 	public SecurityFilterChain securityConfig(HttpSecurity http) throws Exception {
 		return http.csrf()
@@ -51,14 +56,4 @@ public class AppSecurityConfig {
 				  .build();
 	}
 }
-
-
-
-
-
-
-
-
-
-
 

@@ -15,7 +15,7 @@ public class Application {
 		
 		EmpService bean = context.getBean(EmpService.class);
 		
-		// bean.saveEmployee();
+		bean.saveEmployee();
 		bean.getEmp();
 		bean.getAddress();
 		// bean.deleteEmp();

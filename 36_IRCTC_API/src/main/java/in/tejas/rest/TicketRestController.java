@@ -33,7 +33,7 @@ public class TicketRestController {
 	
 	@GetMapping(
 			value="ticket/{tid}",
-			produces = "application/json"
+			produces = {"application/xml" , "application/json","text/plain"}
 	)
 	public ResponseEntity<Ticket> getTicket(@PathVariable("tid") Integer tid){
 		Ticket t = service.getTicket(tid);
@@ -43,7 +43,7 @@ public class TicketRestController {
 
 	@GetMapping(
 			value="/tickets",
-			produces = "application/json"
+			produces = {"application/xml" , "application/json","text/plain"}
 	)
 	public ResponseEntity<List<Ticket>> getAllTickets(){
 		List<Ticket> tickets = service.getTickets();
@@ -51,12 +51,3 @@ public class TicketRestController {
 	}
 	
 }
-
-
-
-
-
-
-
-
-

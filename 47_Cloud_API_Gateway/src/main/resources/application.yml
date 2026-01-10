@@ -1,18 +1,20 @@
-server:
-  port: 3333
+server:                           # ----------> Server configuration section starts
+  port: 3333                      # The API Gateway will run on port 3333
 
-spring:
-  cloud:
-    gateway:
-      routes:
-      - id: welcome-api
-        uri: lb://WELCOME-API
-        predicates:
-        - Path=/welcome  
-      - id: greet-api
-        uri: lb://GREET-API
-        predicates:
-        - Path=/greet
+spring:                           # ----------> All Spring Boot configurations start here
+  cloud:                          # ----------> Spring Cloud configurations (for microservices, gateway, etc.)
+    gateway:                      # ----------> This block defines Spring Cloud Gateway settings
+      routes:                     # ----------> List of routing rules (how requests are mapped to microservices)
+      
+      - id: welcome-api           # Unique identifier for the first route (for logging & debugging)
+        uri: lb://WELCOME-API     # "lb://" means Load Balancer — uses Eureka to locate the WELCOME-API service
+        predicates:               # ----------> Conditions (rules) to match requests for this route
+        - Path=/welcome           # Any incoming request with path "/welcome" will be routed to WELCOME-API service
         
-  application:
-    name: CLOUD-API-GATEWAY
+      - id: greet-api             # Unique identifier for the second route
+        uri: lb://GREET-API       # Uses Eureka to find any instance of GREET-API and forward request
+        predicates:               # ----------> Conditions (rules) to match requests for this route
+        - Path=/greet             # Any request hitting "/greet" will go to GREET-API service
+        
+  application:                    # ----------> Spring Boot application-level configuration
+    name: CLOUD-API-GATEWAY       # The name of this microservice (as registered in Eureka Server)

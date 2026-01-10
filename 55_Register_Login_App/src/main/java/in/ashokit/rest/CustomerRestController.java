@@ -38,7 +38,7 @@ public class CustomerRestController {
 	public ResponseEntity<String> loginCheck(@RequestBody Customer c) {
 		UsernamePasswordAuthenticationToken token = 
 				new UsernamePasswordAuthenticationToken(c.getEmail(), c.getPwd());
-		try {
+	 	try {
 			Authentication authenticate = authManager.authenticate(token);
 			if (authenticate.isAuthenticated()) {
 				return new ResponseEntity<String>("Welcome to Ashok IT", HttpStatus.OK);
@@ -48,6 +48,4 @@ public class CustomerRestController {
 		}
 		return new ResponseEntity<String>("Invalid Credentials", HttpStatus.UNAUTHORIZED);
 	}
-
-
 }

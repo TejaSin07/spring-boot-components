@@ -14,7 +14,7 @@ public class Application {
 
 		UserService service = context.getBean(UserService.class);
 		
-		service.getName(100);
+		System.out.println(service.getName(100));
 		
 	}
 

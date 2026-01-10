@@ -4,9 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="userDao" class="in.ashokit.dao.UserDaoImpl" />
+	<bean id="userDao2" class="in.ashokit.dao.UserDaoImpl2" scope="prototype"/>
 
-	<bean id="userService" class="in.ashokit.service.UserServiceImpl">
+	<!--  <bean id="userService" class="in.ashokit.service.UserServiceImpl">
 		<constructor-arg ref="userDao" />
+	</bean> -->
+	<bean id="userService2" class="in.ashokit.service.UserServiceImpl" scope="prototype">
+		<property name="userDaoRef" ref="userDao2" />
 	</bean>
 
 </beans>

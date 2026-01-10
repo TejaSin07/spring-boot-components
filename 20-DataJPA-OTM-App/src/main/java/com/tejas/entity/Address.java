@@ -22,12 +22,6 @@ public class Address {
 
 	private String country;
 
-	@Override
-	public String toString() {
-		return "Address [addrId=" + addrId + ", city=" + city + ", state=" + state + ", country=" + country + ", type="
-				+ type + ", emp=" + emp + "]";
-	}
-
 	private String type;
 
 	@ManyToOne

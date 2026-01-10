@@ -22,12 +22,12 @@ public class MsgRestControllerTest {
 	private MsgService msgService;
 
 	@Autowired
-	private MockMvc mockMvc;
+	private MockMvc mockMvc;//used to send http request to our rest api
 
 	@Test
 	public void testWelcome() throws Exception {
 		
-		// define mock behaviour
+		// define mock behavior
 		when(msgService.getWelcomeMsg()).thenReturn("Good Afternoon...!!");
 		
 		// create http request to access our rest controller method
@@ -63,9 +63,10 @@ public class MsgRestControllerTest {
 		// validate response
 		int actualStatusCode = response.getStatus();
 		int expectedStatusCode  = 200;
-		
-		assertEquals(expectedStatusCode, actualStatusCode);
-		
+		String body = response.getContentAsString();
+		assertEquals("dummy texT", body);
+//		assertEquals(expectedStatusCode, actualStatusCode);
+		//we are not comparing exact result we are just checking if method executing its logic correctly or not
 	}
 
 }

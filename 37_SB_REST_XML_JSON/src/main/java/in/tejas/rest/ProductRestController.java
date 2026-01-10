@@ -25,15 +25,11 @@ public class ProductRestController {
 	@PostMapping(
 			value="/product",
 			consumes = {"application/xml", "application/json"},
-			produces = "text/plain"
+			produces = "application/json"
 	)
 	public ResponseEntity<String> addProduct(@RequestBody Product p){
 		System.out.println(p);
 		//logic
 		return new ResponseEntity<String>("product added", HttpStatus.CREATED);
-	}
-	
+	}	
 }
-
-
-

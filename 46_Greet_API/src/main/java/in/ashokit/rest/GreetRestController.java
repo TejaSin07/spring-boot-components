@@ -20,7 +20,6 @@ public class GreetRestController {
 	public String greetMsg() {
 
 		String welcomeResp = welcomeClient.invokeWelcomeApi();
-		
 
 		String port = env.getProperty("server.port");
 

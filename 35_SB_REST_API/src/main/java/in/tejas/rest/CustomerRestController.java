@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.tejas.binding.Customer;
 
-
 //below we are creating provider
-
 
 @RestController
 public class CustomerRestController {
@@ -45,8 +43,8 @@ public class CustomerRestController {
 
 	@PostMapping(
 			value = "/customer", 
-			consumes = "application/json",// it is taking input in json format
-			produces = "text/plain"	// it is sending data in text formmat
+			consumes ={"application/xml" , "application/json", "text/plain"}	,// it is taking input in json/xml format
+			produces = {"application/xml" , "application/json","text/plain"}	// it is sending data in text formmat
 	)
 	public ResponseEntity<String> createCustomer(@RequestBody Customer c) {//Without @RequestBody, Spring won't convert JSON to Java objects properly.
 		System.out.println(c);
@@ -56,7 +54,7 @@ public class CustomerRestController {
 
 	@GetMapping(
 			value = "/customers", 
-			produces = "application/json"
+			produces =  {"application/json", "application/xml"}
 	)
 	public ResponseEntity<List<Customer>> getCustomers() {
 		Customer c1 = new Customer(1, "John", "john@gmail.com");
@@ -70,7 +68,7 @@ public class CustomerRestController {
 
 	@GetMapping(
 			value = "/customer", 
-			produces = "application/json"  
+			produces =  {"application/xml" , "application/json"}
 	)
 	public ResponseEntity<Customer> getCustomer() {
 		Customer c = new Customer(1, "John", "john@gmail.com");

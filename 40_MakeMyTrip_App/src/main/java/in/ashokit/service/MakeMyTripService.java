@@ -19,9 +19,7 @@ public class MakeMyTripService {
 	public Mono<Ticket> bookTicket(Passenger p) {
 
 		// logic to send post request
-		
 		WebClient webClient = WebClient.create();
-		
 		return webClient.post()
 						 .uri(BOOK_TICKET_URL)
 						 .body(BodyInserters.fromValue(p))
@@ -31,11 +29,9 @@ public class MakeMyTripService {
 	}
 
 	public Mono<Ticket[]> getAllTickets() {
-
+		
 		// logic to send get request
-		
 		WebClient webClient = WebClient.create();
-		
 		return webClient.get()
 						 .uri(GET_TICKETS_URL)
 						 .retrieve()

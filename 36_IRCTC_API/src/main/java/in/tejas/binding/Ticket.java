@@ -11,6 +11,7 @@ public class Ticket {
 	@Id
 	@GeneratedValue
 	private Integer ticketId;
+	
 	private String ticketStatus;
 	private String trainNum;
 	private String name;

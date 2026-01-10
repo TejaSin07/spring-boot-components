@@ -3,12 +3,14 @@ package in.ashokit.repo;
 import java.util.List;
 
 
+
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import in.ashokit.entity.Employee ;
+import in.ashokit.entity.Employee;
 
-EmpRepo extends CrudRepository<Employee, Integer> {
+class Employee implements CrudRepository<Employee, Integer> {
 
 	@Query("from Employee")
 	public List<Employee> getAllEmpsHQL();

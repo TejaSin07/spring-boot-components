@@ -1,6 +1,7 @@
 package in.ashokit.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.ashokit.entity.Customer;
+import in.ashokit.entity.CustomerA;
 import in.ashokit.repo.CustomerRepo;
 import in.ashokit.service.JwtService;
 
@@ -39,7 +40,7 @@ public class CustomerRestController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<String> loginCheck(@RequestBody Customer c) {
+	public ResponseEntity<String> loginCheck(@RequestBody CustomerA c) {
 		
 		UsernamePasswordAuthenticationToken token = 
 				new UsernamePasswordAuthenticationToken(c.getUname(), c.getPwd());
@@ -60,7 +61,7 @@ public class CustomerRestController {
 	}
 
 	@PostMapping("/register")
-	public String registerCustomer(@RequestBody Customer customer) {
+	public String registerCustomer(@RequestBody CustomerA customer) {
 		
 		// duplicate check
 

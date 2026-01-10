@@ -20,9 +20,13 @@ public class Person {
 	private String name;
 
 	private String gender;  
-	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL,fetch = FetchType.LAZY )	
-	private Passport passport;
+	
+//	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL,fetch = FetchType.LAZY)	
+//	private Passport passport;
 
+	@OneToOne(mappedBy = "person",cascade = CascadeType.ALL)  //observe person is variable not a class
+	private Passport passport;
+	
 	public Integer getPersonId() {
 		return personId;
 	}
@@ -54,5 +58,13 @@ public class Person {
 	public void setPassport(Passport passport) {
 		this.passport = passport;
 	}
+	@Override
+	public String toString() {
+	    return "Person [personId=" + personId +
+	           ", name=" + name +
+	           ", gender=" + gender + 
+	           "]";
+	}
+
 
 }

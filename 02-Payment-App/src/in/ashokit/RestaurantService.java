@@ -8,6 +8,10 @@ public class RestaurantService {
 		this.payment  = payment;
 	}
 	
+	public RestaurantService() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void setPayment(IPayment payment) {
 		this.payment = payment;
 	}

@@ -36,7 +36,7 @@ public class MyFilter implements GlobalFilter {
 		}
 		
 		List<String> list = headers.get("secret");
-		if(!list.get(0).equals("ashokit@123")) {
+		if(!list.get(0).equals("tejas")) {
 			throw new RuntimeException("Invalid Token");
 		}
 		return chain.filter(exchange);

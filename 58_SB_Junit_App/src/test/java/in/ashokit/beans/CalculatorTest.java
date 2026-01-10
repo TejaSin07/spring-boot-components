@@ -2,6 +2,7 @@ package in.ashokit.beans;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
@@ -10,7 +11,7 @@ public class CalculatorTest {
 	public void addTest() {
 		Calculator c = new Calculator();
 		int actual = c.add(3, 6);
-		int expec = 7;
+		int expec = 9;
 		assertEquals(actual, expec);
 	}
 	

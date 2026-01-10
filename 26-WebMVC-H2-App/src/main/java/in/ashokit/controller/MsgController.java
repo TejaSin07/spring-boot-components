@@ -9,13 +9,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MsgController {
 	
-	@GetMapping("/greet")
+	@GetMapping("/greet")  //first type
 	public String getGreetMsg(Model model) {
 		model.addAttribute("msg", "Hi, Hello");
 		return "index";
 	}
 	
-	@GetMapping("/welcome")
+	@GetMapping("/welcome")  //second type
 	public ModelAndView getWelcomeMsg() {
 		
 		String msgText = "Good Morning..!!";
